@@ -1,98 +1,37 @@
 export const templates = [
   {
-    url: "https://personalbranding1.vercel.app",
-    name: "Clean",
-    description: "Desain bersih dan elegan untuk profesional kreatif dengan tata letak simpel",
-    image: "/images/pb1.png",
-    category: "Profesional",
-    tags: ["Minimal", "Elegan", "Portfolio"]
+    kode: 'RSV-001', name: 'Restoran', emoji: '🍽️',
+    paradigma: 'Pilih meja & jam makan',
+    description: 'Reservasi meja dengan denah interaktif — pilih meja favorit, tentukan jam, konfirmasi instan.',
+    image: '/images/r1.png', url: '#',
+    detail: { kolom1: ['GATE', 'MEJA'], kolom2: ['MODE', 'DINE-IN'] },
   },
   {
-    url: "https://personalbranding2.vercel.app",
-    name: "Agencia",
-    description: "Tampilkan karya Anda dengan galeri visual yang memukau dan interaktif",
-    image: "/images/pb2.png",
-    category: "Kreatif",
-    tags: ["Galeri", "Interaktif", "Portfolio"]
+    kode: 'RSV-002', name: 'Hotel', emoji: '🛎️',
+    paradigma: 'Check-in — check-out',
+    description: 'Booking kamar dengan rentang tanggal, tipe kamar, dan ringkasan biaya menginap yang jelas.',
+    image: '/images/r2.png', url: '#',
+    detail: { kolom1: ['IN', '14:00'], kolom2: ['OUT', '12:00'] },
   },
   {
-    url: "https://personalbranding3.vercel.app",
-    name: "Playfull",
-    description: "Template profesional untuk bisnis dengan penekanan pada konversi tinggi",
-    image: "/images/pb3.png",
-    category: "Bisnis",
-    tags: ["Perusahaan", "Konversi", "Profesional"]
+    kode: 'RSV-003', name: 'Klinik', emoji: '🩺',
+    paradigma: 'Ambil nomor antrian dokter',
+    description: 'Pilih dokter & jadwal praktik, dapatkan nomor antrian — tanpa menunggu di ruang tunggu.',
+    image: '/images/r3.png', url: '#',
+    detail: { kolom1: ['POLI', 'UMUM'], kolom2: ['NO.', 'A-17'] },
   },
   {
-    url: "https://personalbranding4.vercel.app",
-    name: "Futuristic",
-    description: "Template energik untuk influencer dengan integrasi media sosial lengkap",
-    image: "/images/pb4.png",
-    category: "Media Sosial",
-    tags: ["Sosial Media", "Viral", "Personal Branding"]
+    kode: 'RSV-004', name: 'Futsal', emoji: '⚽',
+    paradigma: 'Kunci lapangan per jam',
+    description: 'Grid jadwal lapangan per jam — lihat slot kosong, kunci jam main bareng tim langsung.',
+    image: '/images/r4.png', url: '#',
+    detail: { kolom1: ['COURT', 'A'], kolom2: ['SLOT', '19:00'] },
   },
   {
-    url: "https://personalbranding5.vercel.app",
-    name: "Bisnisku",
-    description: "Template romantis untuk pasangan yang berbagi momen spesial mereka",
-    image: "/images/pb5.png",
-    category: "Acara",
-    tags: ["Pernikahan", "Acara", "Romantis"]
+    kode: 'RSV-005', name: 'Bioskop', emoji: '🎬',
+    paradigma: 'Pilih kursi di studio',
+    description: 'Seat-picker studio bioskop — pilih film, jam tayang, dan kursi favoritmu baris demi baris.',
+    image: '/images/r5.png', url: '#',
+    detail: { kolom1: ['STUDIO', '2'], kolom2: ['SEAT', 'F-07'] },
   },
-  {
-    url: "https://personalbranding6.vercel.app",
-    name: "Retro",
-    description: "Solusi lengkap untuk startup dengan fitur produk dan tim yang modern",
-    image: "/images/pb6.png",
-    category: "Bisnis",
-    tags: ["Startup", "Teknologi", "Inovatif"]
-  },
-  {
-    url: "https://personalbranding7.vercel.app",
-    name: "Persona",
-    description: "Bagikan petualangan Anda dengan peta interaktif dan galeri perjalanan",
-    image: "/images/pb7.png",
-    category: "Travel",
-    tags: ["Petualangan", "Peta", "Travel"]
-  },
-  {
-    url: "https://personalbranding8.vercel.app",
-    name: "Matrix",
-    description: "Template dinamis untuk musisi dengan pemutar musik built-in yang elegan",
-    image: "/images/pb8.png",
-    category: "Musik",
-    tags: ["Musik", "Artis", "Audio"]
-  },
-  {
-    url: "https://personalbranding9.vercel.app",
-    name: "Cutie",
-    description: "Template energik untuk pelatih kebugaran dengan jadwal kelas online",
-    image: "/images/pb9.png",
-    category: "Kesehatan",
-    tags: ["Kebugaran", "Kesehatan", "Olahraga"]
-  },
-  {
-    url: "https://personalbranding10.vercel.app",
-    name: "Angkringan",
-    description: "Template hangat untuk kafe dengan menu digital dan sistem reservasi",
-    image: "/images/pb10.png",
-    category: "Kuliner",
-    tags: ["Makanan", "Minuman", "Kafe"]
-  },
-  {
-    url: "https://personalbranding11.vercel.app",
-    name: "Jajan",
-    description: "Galeri foto fullscreen dengan lightbox dan efek zoom yang memukau",
-    image: "/images/pb11.png",
-    category: "Fotografi",
-    tags: ["Foto", "Galeri", "Visual"]
-  },
-  {
-    url: "https://personalbranding12.vercel.app",
-    name: "SKT",
-    description: "Template ramah lingkungan dengan nuansa alam dan elemen organik",
-    image: "/images/pb12.png",
-    category: "Lifestyle",
-    tags: ["Alam", "Organik", "Hijau"]
-  }
 ];

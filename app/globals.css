@@ -1,35 +1,50 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-display: var(--font-barlow), system-ui, sans-serif;
+  --font-mono: var(--font-spacemono), ui-monospace, monospace;
+
+  --color-navy: #10203f;
+  --color-kremr: #f4efe6;
+  --color-oranyer: #ff7a1a;
+  --color-mutedr: #5f6b81;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background-color: #ffffff;
-  color: #1e293b; /* Tailwind slate-800, gelap tapi adem */
-  font-family: 'Inter', sans-serif;
-  overscroll-behavior-y: contain;
+  background-color: var(--color-kremr);
+  color: var(--color-navy);
+  font-family: var(--font-spacemono), ui-monospace, monospace;
+  overflow-x: hidden;
 }
 
-.scrollbar-hide::-webkit-scrollbar {
-  display: none;
+h1, h2, h3 { font-family: var(--font-display); letter-spacing: 0.01em; }
+
+/* Tiket dengan takik samping (perforasi) */
+.tiket {
+  position: relative;
+  background: #fff;
+  border: 2px solid var(--color-navy);
+  border-radius: 1rem;
+  box-shadow: 6px 6px 0 rgba(16, 32, 63, 0.15);
 }
-.scrollbar-hide {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+.tiket::before, .tiket::after {
+  content: ""; position: absolute; top: 50%; width: 26px; height: 26px; border-radius: 9999px;
+  background: var(--color-kremr); border: 2px solid var(--color-navy); transform: translateY(-50%);
 }
+.tiket::before { left: -15px; clip-path: inset(0 0 0 50%); border-left: none; }
+.tiket::after { right: -15px; clip-path: inset(0 50% 0 0); border-right: none; }
+
+.perf { border-top: 2px dashed rgba(16, 32, 63, 0.35); }
+
+/* Papan flip (departure board) */
+.board { background: var(--color-navy); color: var(--color-kremr); letter-spacing: 0.12em; }
+
+@keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.rise { animation: rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes blinkr { 0%, 60% { opacity: 1; } 61%, 100% { opacity: 0.2; } }
+.blinkr { animation: blinkr 1.2s steps(1) infinite; }
+
+:focus-visible { outline: 3px solid var(--color-oranyer); outline-offset: 3px; border-radius: 10px; }
