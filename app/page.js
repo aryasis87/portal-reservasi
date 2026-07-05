@@ -12,7 +12,7 @@ export default function PortalReservasi() {
       {/* Navbar */}
       <header className="sticky top-0 z-40 border-b-2 border-navy bg-kremr/90 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <a href="#" className="flex items-center gap-2 font-display text-xl font-extrabold uppercase tracking-wide">
+          <a href="/" className="flex items-center gap-2 font-display text-xl font-extrabold uppercase tracking-wide">
             <span className="grid h-9 w-9 place-items-center rounded-lg border-2 border-navy bg-oranyer text-white shadow-[3px_3px_0_var(--color-navy)]"><Ticket size={17} /></span>
             PortalReservasi
           </a>
