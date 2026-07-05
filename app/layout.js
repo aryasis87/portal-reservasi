@@ -5,10 +5,10 @@ const barlow = Barlow_Condensed({ subsets: ['latin'], variable: '--font-barlow',
 const spacemono = Space_Mono({ subsets: ['latin'], variable: '--font-spacemono', weight: ['400', '700'] });
 
 
-const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalReservasi","description":"Koleksi 5 aplikasi booking","url":"https://portal-reservasi-nu.vercel.app","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://pintuweb.id"}};
+const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalReservasi","description":"Koleksi 5 aplikasi booking","url":"https://reservasi.pintuweb.com","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://pintuweb.com"}};
 
 export const metadata = {
-  metadataBase: new URL("https://portal-reservasi-nu.vercel.app"),
+  metadataBase: new URL("https://reservasi.pintuweb.com"),
   title: "PortalReservasi — Lima Cara Mengambil Antrian",
   description: "PortalReservasi: 5 aplikasi booking dengan paradigma berbeda — restoran, hotel, klinik, futsal, dan bioskop.",
   applicationName: "PortalReservasi",
@@ -16,11 +16,11 @@ export const metadata = {
   authors: [{ name: "PortalReservasi" }],
   creator: "PortalReservasi",
   publisher: "PortalReservasi",
-  alternates: { canonical: "https://portal-reservasi-nu.vercel.app" },
+  alternates: { canonical: "https://reservasi.pintuweb.com" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://portal-reservasi-nu.vercel.app",
+    url: "https://reservasi.pintuweb.com",
     siteName: "PortalReservasi",
     title: "PortalReservasi — Lima Cara Mengambil Antrian",
     description: "PortalReservasi: 5 aplikasi booking dengan paradigma berbeda — restoran, hotel, klinik, futsal, dan bioskop.",
