@@ -1,21 +1,52 @@
 'use client';
+import { useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { Ticket, ArrowDown, ArrowUpRight, MessageCircle } from 'lucide-react';
+import { Ticket, ArrowDown, ArrowUpRight, MessageCircle, CalendarCheck, LayoutGrid, BellRing, ShieldCheck, BarChart3, Smartphone, ClipboardList, MousePointerClick, CheckCheck, ChevronDown } from 'lucide-react';
 import { templates } from './components/templates-data';
 
 const WA = 'https://wa.me/6281339908765?text=Halo%2C%20saya%20tertarik%20aplikasi%20reservasi%20di%20PortalReservasi';
 
+const FASILITAS = [
+  { icon: LayoutGrid, title: 'Denah Interaktif', desc: 'Tamu memilih meja, kursi, atau slot langsung dari denah visual — bukan menebak dari daftar.' },
+  { icon: CalendarCheck, title: 'Slot Real-Time', desc: 'Jadwal yang penuh otomatis tertutup. Tidak ada dobel booking, tidak ada drama.' },
+  { icon: BellRing, title: 'Konfirmasi Instan', desc: 'Begitu tamu memesan, detail reservasi langsung terkirim — rapi dan tercatat.' },
+  { icon: ShieldCheck, title: 'Validasi Pesanan', desc: 'Formulir memastikan data lengkap sebelum submit; tak ada reservasi setengah jadi.' },
+  { icon: BarChart3, title: 'Ringkasan Harian', desc: 'Kamu tahu berapa kursi terisi hari ini dalam sekali pandang.' },
+  { icon: Smartphone, title: 'Ramah Ponsel', desc: 'Tamu memesan sambil rebahan — alur selesai kurang dari satu menit.' },
+];
+
+const BOARDING = [
+  { icon: ClipboardList, no: 'GATE 1', title: 'Check-In Kebutuhan', desc: 'Restoran? Klinik? Futsal? Ceritakan alur booking usahamu.' },
+  { icon: MousePointerClick, no: 'GATE 2', title: 'Pilih Paradigma', desc: 'Lima pola teruji — pilih yang paling cocok dengan operasionalmu.' },
+  { icon: CheckCheck, no: 'GATE 3', title: 'Kustomisasi', desc: 'Menu, jam buka, denah, dan branding kami sesuaikan.' },
+  { icon: Ticket, no: 'GATE 4', title: 'Boarding', desc: 'Sistem live — pelangganmu mulai reservasi hari itu juga.' },
+];
+
+const INFO = [
+  { q: 'Apakah reservasi masuk ke WhatsApp saya?', a: 'Ya. Setiap reservasi diteruskan sebagai pesan WhatsApp terstruktur (nama, tanggal, slot, jumlah) langsung ke nomormu — tanpa perlu buka dashboard.' },
+  { q: 'Bagaimana mencegah dobel booking?', a: 'Slot yang sudah diambil otomatis dikunci dan hilang dari pilihan. Kamu juga bisa menutup slot manual, misalnya untuk acara privat.' },
+  { q: 'Bisakah jam operasional dan kapasitas diatur?', a: 'Bisa penuh: hari libur, jam buka-tutup, jumlah meja/kamar/lapangan, hingga durasi per sesi — semua mengikuti aturan usahamu.' },
+  { q: 'Usaha saya tidak ada di lima kategori itu — tetap bisa?', a: 'Tetap bisa. Lima template ini adalah paradigma (denah, kalender, antrian, grid jadwal, kursi). Hampir semua bisnis booking cocok dengan salah satunya — kami sesuaikan istilah dan alurnya.' },
+];
+
 export default function PortalReservasi() {
+  const [buka, setBuka] = useState(0);
   return (
-    <div className="min-h-screen">
+    <div id="top" className="min-h-screen">
       {/* Navbar */}
       <header className="sticky top-0 z-40 border-b-2 border-navy bg-kremr/90 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
-          <a href="/" className="flex items-center gap-2 font-display text-xl font-extrabold uppercase tracking-wide">
+          <a href="#top" className="flex items-center gap-2 font-display text-xl font-extrabold uppercase tracking-wide">
             <span className="grid h-9 w-9 place-items-center rounded-lg border-2 border-navy bg-oranyer text-white shadow-[3px_3px_0_var(--color-navy)]"><Ticket size={17} /></span>
             PortalReservasi
           </a>
+          <div className="hidden items-center gap-6 font-display text-xs font-bold uppercase tracking-wide text-mutedr md:flex" role="navigation" aria-label="Navigasi">
+            <a href="#tiket" className="transition hover:text-oranyer">Tiket</a>
+            <a href="#fasilitas" className="transition hover:text-oranyer">Fasilitas</a>
+            <a href="#boarding" className="transition hover:text-oranyer">Alur</a>
+            <a href="#info" className="transition hover:text-oranyer">Informasi</a>
+          </div>
           <a href={WA} target="_blank" rel="noopener noreferrer" className="rounded-lg border-2 border-navy bg-navy px-5 py-2 font-display text-sm font-bold uppercase tracking-wide text-kremr transition hover:bg-oranyer">
             Booking Demo
           </a>
@@ -115,6 +146,91 @@ export default function PortalReservasi() {
         </div>
       </section>
 
+      {/* Fasilitas terminal */}
+      <section id="fasilitas" className="scroll-mt-20 border-t-2 border-navy bg-white px-4 py-16 sm:px-6 lg:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer">Fasilitas Terminal</p>
+            <h2 className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Semua penerbangan <span className="text-oranyer">full service</span></h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-mutedr">Apapun paradigma yang kamu pilih, fitur intinya sama lengkap.</p>
+          </div>
+          <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {FASILITAS.map((f, i) => (
+              <motion.div
+                key={f.title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.45, delay: (i % 3) * 0.08 }}
+                className="rounded-xl border-2 border-navy bg-kremr p-6 shadow-[4px_4px_0_rgba(16,32,63,0.15)] transition hover:-translate-y-1 hover:shadow-[6px_6px_0_rgba(232,93,38,0.35)]"
+              >
+                <span className="grid h-11 w-11 place-items-center rounded-lg border-2 border-navy bg-navy text-kremr"><f.icon size={20} /></span>
+                <h3 className="mt-4 font-display text-lg font-extrabold uppercase">{f.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-mutedr">{f.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Alur boarding */}
+      <section id="boarding" className="scroll-mt-20 px-4 py-16 sm:px-6 lg:py-20">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer">Alur Boarding</p>
+            <h2 className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Empat gerbang menuju <span className="text-oranyer">lepas landas</span></h2>
+          </div>
+          <div className="relative mt-14 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <span className="absolute left-0 right-0 top-7 hidden border-t-2 border-dashed border-navy/30 lg:block" aria-hidden="true" />
+            {BOARDING.map((b, i) => (
+              <motion.div
+                key={b.no}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.45, delay: i * 0.1 }}
+                className="relative text-center"
+              >
+                <span className="relative z-10 mx-auto grid h-14 w-14 place-items-center rounded-xl border-2 border-navy bg-oranyer text-white shadow-[4px_4px_0_var(--color-navy)]"><b.icon size={22} /></span>
+                <p className="mt-3 font-display text-[11px] font-bold uppercase tracking-[0.25em] text-oranyer">{b.no}</p>
+                <h3 className="mt-1 font-display text-lg font-extrabold uppercase">{b.title}</h3>
+                <p className="mx-auto mt-1.5 max-w-[15rem] text-sm leading-relaxed text-mutedr">{b.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Informasi (FAQ) */}
+      <section id="info" className="scroll-mt-20 border-t-2 border-navy bg-white px-4 py-16 sm:px-6 lg:py-20">
+        <div className="mx-auto max-w-3xl">
+          <div className="text-center">
+            <p className="font-display text-xs font-bold uppercase tracking-[0.3em] text-oranyer">Pusat Informasi</p>
+            <h2 className="mt-3 font-display text-3xl font-extrabold uppercase sm:text-4xl">Sebelum <span className="text-oranyer">take-off</span></h2>
+          </div>
+          <div className="mt-10 space-y-4">
+            {INFO.map((t, i) => {
+              const open = buka === i;
+              return (
+                <div key={t.q} className={`rounded-xl border-2 border-navy bg-kremr transition ${open ? 'shadow-[5px_5px_0_rgba(232,93,38,0.5)]' : 'shadow-[4px_4px_0_rgba(16,32,63,0.15)]'}`}>
+                  <button onClick={() => setBuka(open ? -1 : i)} aria-expanded={open} className="flex w-full items-center justify-between gap-4 px-6 py-4 text-left">
+                    <span className="font-display text-base font-extrabold leading-snug">{t.q}</span>
+                    <span className={`grid h-7 w-7 shrink-0 place-items-center rounded-md border-2 border-navy transition ${open ? 'rotate-180 bg-oranyer text-white' : 'bg-white'}`}>
+                      <ChevronDown size={15} />
+                    </span>
+                  </button>
+                  {open && (
+                    <div className="border-t-2 border-dashed border-navy/25 px-6 py-4">
+                      <p className="text-sm leading-relaxed text-mutedr">{t.a}</p>
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="board border-t-2 border-navy px-4 py-16 text-center sm:px-6">
         <motion.div initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="mx-auto max-w-xl">
@@ -127,8 +243,35 @@ export default function PortalReservasi() {
         </motion.div>
       </section>
 
-      <footer className="board px-4 py-5 text-center text-[11px] text-kremr/40">
-        © {new Date().getFullYear()} PortalReservasi · Sanzystore Dev — no show, no cry.
+      <footer className="board border-t border-kremr/10 px-4 pb-6 pt-10 text-kremr/60">
+        <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 text-center sm:grid-cols-3 sm:text-left">
+          <div>
+            <p className="flex items-center justify-center gap-2 font-display text-lg font-extrabold uppercase tracking-wide text-kremr sm:justify-start">
+              <span className="grid h-8 w-8 place-items-center rounded-md bg-oranyer text-white"><Ticket size={15} /></span>
+              PortalReservasi
+            </p>
+            <p className="mt-2 text-sm leading-relaxed">Lima paradigma booking untuk restoran, hotel, klinik, futsal, dan bioskop.</p>
+          </div>
+          <nav aria-label="Tautan footer" className="text-sm">
+            <p className="font-display text-[11px] font-bold uppercase tracking-[0.25em] text-oranyer">Terminal</p>
+            <ul className="mt-3 space-y-2">
+              <li><a href="#tiket" className="transition hover:text-kremr">Koleksi Tiket</a></li>
+              <li><a href="#fasilitas" className="transition hover:text-kremr">Fasilitas</a></li>
+              <li><a href="#boarding" className="transition hover:text-kremr">Alur Boarding</a></li>
+              <li><a href="#info" className="transition hover:text-kremr">Pusat Informasi</a></li>
+            </ul>
+          </nav>
+          <div className="text-sm">
+            <p className="font-display text-[11px] font-bold uppercase tracking-[0.25em] text-oranyer">Hubungi</p>
+            <ul className="mt-3 space-y-2">
+              <li><a href={WA} target="_blank" rel="noopener noreferrer" className="transition hover:text-kremr">WhatsApp +62 813 3990 8765</a></li>
+              <li><a href="https://pintuweb.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-kremr">pintuweb.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <p className="mt-10 border-t border-kremr/10 pt-5 text-center text-[11px] text-kremr/40">
+          © {new Date().getFullYear()} PortalReservasi · bagian dari PintuWeb — no show, no cry.
+        </p>
       </footer>
     </div>
   );
