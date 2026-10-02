@@ -270,7 +270,7 @@ export default function PortalReservasi() {
             <p className="font-display text-[11px] font-bold uppercase tracking-[0.25em] text-oranyer">Hubungi</p>
             <ul className="mt-3 space-y-2">
               <li><a href={WA} target="_blank" rel="noopener noreferrer" className="transition hover:text-kremr">WhatsApp +62 813 3990 8765</a></li>
-              <li><a href="https://pintuweb.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-kremr">pintuweb.com</a></li>
+              <li><a href="https://www.pintuweb.com" target="_blank" rel="noopener noreferrer" className="transition hover:text-kremr">pintuweb.com</a></li>
             </ul>
           </div>
         </div>

@@ -5,7 +5,7 @@ const barlow = Barlow_Condensed({ subsets: ['latin'], variable: '--font-barlow',
 const spacemono = Space_Mono({ subsets: ['latin'], variable: '--font-spacemono', weight: ['400', '700'] });
 
 
-const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalReservasi","description":"Koleksi 5 aplikasi booking","url":"https://portal-reservasi-nu.vercel.app","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://pintuweb.com"}};
+const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalReservasi","description":"Koleksi 5 aplikasi booking","url":"https://portal-reservasi-nu.vercel.app","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.com"}};
 
 export const metadata = {
   metadataBase: new URL("https://portal-reservasi-nu.vercel.app"),
