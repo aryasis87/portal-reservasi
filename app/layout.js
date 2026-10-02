@@ -10,7 +10,7 @@ const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name
 export const metadata = {
   metadataBase: new URL("https://portal-reservasi-nu.vercel.app"),
   title: "PortalReservasi — Lima Cara Mengambil Antrian",
-  description: "PortalReservasi: 5 aplikasi booking dengan paradigma berbeda — restoran, hotel, klinik, futsal, dan bioskop.",
+  description: "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.",
   applicationName: "PortalReservasi",
   keywords: ["template booking", "aplikasi reservasi", "sistem booking", "koleksi template reservasi"],
   authors: [{ name: "PortalReservasi" }],
@@ -23,13 +23,13 @@ export const metadata = {
     url: "https://portal-reservasi-nu.vercel.app",
     siteName: "PortalReservasi",
     title: "PortalReservasi — Lima Cara Mengambil Antrian",
-    description: "PortalReservasi: 5 aplikasi booking dengan paradigma berbeda — restoran, hotel, klinik, futsal, dan bioskop.",
+    description: "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.",
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "PortalReservasi — Lima Cara Mengambil Antrian" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "PortalReservasi — Lima Cara Mengambil Antrian",
-    description: "PortalReservasi: 5 aplikasi booking dengan paradigma berbeda — restoran, hotel, klinik, futsal, dan bioskop.",
+    description: "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.",
     images: ["/og.jpg"],
   },
   robots: {
@@ -41,8 +41,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="id">
-      <body className={`${barlow.variable} ${spacemono.variable} antialiased`}>
+    <html lang="id" className={`${barlow.variable} ${spacemono.variable}`}>
+      <body className="antialiased">
         <main>{children}</main>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(__jsonld) }} />
         </body>
