@@ -138,8 +138,12 @@ export default function PortalReservasi() {
                   </ul>
                 </div>
                 <div className="perf mt-5 flex items-center justify-between pt-4">
-                  <div className="flex gap-1" aria-hidden="true">
-                    {Array.from({ length: 14 }).map((_, k) => <span key={k} className={`inline-block w-1 rounded ${k % 3 ? 'h-6 bg-navy' : 'h-6 bg-navy/40'}`} />)}
+                  <div className="flex items-center gap-3">
+                    <div className="flex gap-1" aria-hidden="true">
+                      {Array.from({ length: 14 }).map((_, k) => <span key={k} className={`w-1 rounded ${k >= 9 ? 'hidden sm:inline-block' : 'inline-block'} ${k % 3 ? 'h-6 bg-navy' : 'h-6 bg-navy/40'}`} />)}
+                    </div>
+                    {/* Stempel: tiket yang sudah terjual */}
+                    {t.terjual > 0 && <span className="-rotate-6 rounded border-2 border-oranyer-ink px-2 py-0.5 font-display text-xs font-bold uppercase tracking-wide text-oranyer-ink">{t.terjual} terjual</span>}
                   </div>
                   <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 rounded-lg bg-navy px-4 py-2 font-display text-xs font-bold uppercase tracking-wide text-kremr transition hover:bg-oranyer">
                     Pesan <ArrowUpRight size={13} />
