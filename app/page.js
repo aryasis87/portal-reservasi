@@ -25,6 +25,7 @@ const BOARDING = [
 
 const INFO = [
   { q: 'Apakah reservasi masuk ke WhatsApp saya?', a: 'Di demo, pesanan hanya disimpan di peramban pengunjung — tidak ada yang dikirim. Saat dipasang untuk usahamu, kami sambungkan ke WhatsApp, email, atau basis data supaya setiap pesanan sampai ke kamu.' },
+  { q: 'Berapa biaya membuat sistem reservasi seperti ini?', a: 'Paket Sistem Reservasi Online PintuWeb Rp5 juta–Rp12 juta, dikerjakan 2–4 minggu: kalender & slot ketersediaan, konfirmasi lewat WhatsApp/email, dashboard admin, dan opsi DP online. Angka pastinya tertulis di penawaran sebelum mulai.' },
   { q: 'Bagaimana mencegah dobel booking?', a: 'Di demo, slot yang sudah terisi tertutup di perangkat yang sama. Versi terpasang memakai basis data bersama, jadi slot yang diambil satu tamu langsung tertutup untuk semua tamu.' },
   { q: 'Bisakah jam operasional dan kapasitas diatur?', a: 'Bisa penuh: hari libur, jam buka-tutup, jumlah meja/kamar/lapangan, hingga durasi per sesi — semua mengikuti aturan usahamu.' },
   { q: 'Usaha saya tidak ada di lima kategori itu — tetap bisa?', a: 'Tetap bisa. Lima template ini adalah paradigma (denah, kalender, antrian, grid jadwal, kursi). Hampir semua bisnis booking cocok dengan salah satunya — kami sesuaikan istilah dan alurnya.' },
