@@ -2,7 +2,7 @@
 
 PortalReservasi: 5 aplikasi booking dengan paradigma berbeda — restoran, hotel, klinik, futsal, dan bioskop.
 
-**Demo live:** https://portal-reservasi-nu.vercel.app
+**Demo live:** https://www.pintuweb.com/website-reservasi
 
 ![Tangkapan layar PortalReservasi](public/og.jpg)
 

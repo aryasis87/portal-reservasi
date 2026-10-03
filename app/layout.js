@@ -5,10 +5,10 @@ const barlow = Barlow_Condensed({ subsets: ['latin'], variable: '--font-barlow',
 const spacemono = Space_Mono({ subsets: ['latin'], variable: '--font-spacemono', weight: ['400', '700'] });
 
 
-const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalReservasi","description":"Koleksi 5 aplikasi booking","url":"https://portal-reservasi-nu.vercel.app","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.com"}};
+const __jsonld = {"@context":"https://schema.org","@type":"CollectionPage","name":"PortalReservasi","description":"Koleksi 5 aplikasi booking","url":"https://www.pintuweb.com/website-reservasi","isPartOf":{"@type":"WebSite","name":"PintuWeb","url":"https://www.pintuweb.com"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PintuWeb","item":"https://www.pintuweb.com"},{"@type":"ListItem","position":2,"name":"Website Reservasi","item":"https://www.pintuweb.com/website-reservasi"}]}};
 
 export const metadata = {
-  metadataBase: new URL("https://portal-reservasi-nu.vercel.app"),
+  metadataBase: new URL("https://www.pintuweb.com/website-reservasi"),
   title: "PortalReservasi — Lima Cara Mengambil Antrian",
   description: "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.",
   applicationName: "PortalReservasi",
@@ -16,11 +16,11 @@ export const metadata = {
   authors: [{ name: "PortalReservasi" }],
   creator: "PortalReservasi",
   publisher: "PortalReservasi",
-  alternates: { canonical: "https://portal-reservasi-nu.vercel.app" },
+  alternates: { canonical: "https://www.pintuweb.com/website-reservasi" },
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://portal-reservasi-nu.vercel.app",
+    url: "https://www.pintuweb.com/website-reservasi",
     siteName: "PortalReservasi",
     title: "PortalReservasi — Lima Cara Mengambil Antrian",
     description: "Lima aplikasi reservasi dengan paradigma berbeda: denah meja restoran, rentang tanggal hotel, slot praktik dokter, grid lapangan futsal, dan peta kursi bioskop.",
